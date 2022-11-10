@@ -9,8 +9,9 @@ public class  EmpWageProgram  {
 		
 	   String attendanceString =  EmpWageProgram.checkAttendance();
 	    System.out.println(attendanceString);
-	    checkAttendance() ;
+	  //  checkAttendance() ;
 
+	    System.out.println("Employee's today wage :" +getDailyWage(attendanceString));
 	}
 
 	  private static String checkAttendance() {
@@ -20,6 +21,17 @@ public class  EmpWageProgram  {
 	    if (randomBool) return "Employee is present.";
 	    
 	    else return "Employee is absent.";
-
+	}
+	  
+	private static int getDailyWage(String str) {
+		
+		boolean isPresent = str.contains("present") || str.contains("present");
+		
+		int empRatePerHr = 20;
+		int hrsWorked = 0;
+		
+		if (isPresent) hrsWorked = 8;
+		int dailyWage = empRatePerHr * hrsWorked;
+		return dailyWage;
 	}
 }
