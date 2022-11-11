@@ -3,6 +3,8 @@ package com.bridgelbz.day3;
 import java.util.Scanner;
 
 public class LineComparison {
+	private static final String L2 = null;
+	private static final String L1 = null;
 	public static void main(String[] args) {
 		System.out.println("--Welcome to Line Comparison Computation Program--\n");
 
@@ -26,9 +28,12 @@ public class LineComparison {
 		float y4 = sc.nextFloat();
 		System.out.println();
 		
-		String lengthL1 = String.format("%.02f" , getLength(x1, y1, x2, y2));
-		String lengthL2 = String.format("%.02f" , getLength(x3, y3, x4, y4));
-
+		double l1 = getLength(x1, y1, x2, y2);
+		double l2 = getLength(x3, y3, x4, y4);
+		
+		String lengthL1 = String.format("%.02f", l1);
+		String lengthL2 = String.format("%.02f", l1);
+		
 		System.out.println("Length of line L1: " +lengthL1);
 		System.out.println("Length of line L2: " +lengthL2);
 		System.out.println();
@@ -36,8 +41,15 @@ public class LineComparison {
 		if (lengthL1.equals(lengthL2)) {
 			System.out.println("The line L1 and L2 are equal");
 		}else {
-			System.out.println("The lines are not equal");
+			Integer L1 = (int) l1;
+			Integer L2 = (int) l2;
 		}
+		
+			if(L1.compareTo(L2) > 0) {
+				System.out.println("Line 1 is greater.");
+			}else {
+				System.out.println("Line 2 is greater.");
+			}
 		
 		sc.close();
 	}
